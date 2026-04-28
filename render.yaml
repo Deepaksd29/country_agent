@@ -9,14 +9,3 @@ services:
         sync: false
       - key: PYTHON_VERSION
         value: 3.12.0
-
-  - type: web
-    name: country-agent-ui
-    env: python
-    buildCommand: uv sync
-    startCommand: streamlit run ui.py --server.port $PORT --server.address 0.0.0.0
-    envVars:
-      - key: GEMINI_API_KEY
-        sync: false
-      - key: PYTHON_VERSION
-        value: 3.12.0

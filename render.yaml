@@ -3,7 +3,7 @@ services:
     name: country-agent-api
     env: python
     buildCommand: uv sync
-    startCommand: uv run uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: GEMINI_API_KEY
         sync: false
@@ -14,7 +14,7 @@ services:
     name: country-agent-ui
     env: python
     buildCommand: uv sync
-    startCommand: uv run streamlit run ui.py --server.port $PORT --server.address 0.0.0.0
+    startCommand: streamlit run ui.py --server.port $PORT --server.address 0.0.0.0
     envVars:
       - key: GEMINI_API_KEY
         sync: false
